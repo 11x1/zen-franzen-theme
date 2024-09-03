@@ -1,4 +1,10 @@
 /* @region-start - top bar (search, url, extensions etc) hidden */
+
+* {
+  font-family: "ProggyCleanTT" !important;
+  font-size: 16px !important;
+}
+
 #zen-appcontent-navbar-container {
   position: absolute;
   
@@ -75,22 +81,27 @@
   /* Element | chrome://browser/content/browser.xhtml */
   #nav-bar {
     display: flex;
+    flex-direction: row-reverse;
   }
 
   #nav-bar > * {
-    order: 2 !important;;
+    order: 2 !important;
   }
 
 /* Element | chrome://browser/content/browser.xhtml */
   /* center the buttons */
   toolbar#nav-bar > hbox.titlebar-buttonbox-container > hbox.titlebar-buttonbox{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     width: fit-content;
     justify-content: center;
     align-items: center;
     gap: .4rem;
     padding: 0 .4rem;
+  }
+  
+  #PanelUI-button {
+    order: 1 !important;
   }
 
       /* make the buttons smaller */
@@ -160,6 +171,8 @@
 
 #urlbar {
   --urlbar-height: 40.00px !important;
+  font-size: 16px !important;
+  font-family: "ProggyCleanTT";
   border: none !important;
   background: transparent;
   border-radius: 3px !important;
@@ -167,7 +180,7 @@
 }
 
 #urlbar-background {
-  background: #ffffff04 !important;  
+  background: #ffffff10 !important;  
   border-radius: 0 !important;
 }
 

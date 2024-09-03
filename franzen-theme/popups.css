@@ -62,9 +62,9 @@ menupopup :is( menuitem, menu ):hover {
 
 .tab-preview-uri, .tab-preview-title {
   position: relative;
-  padding-left: 40px;
+  padding-left: 55px;
 } .tab-preview-uri {
-  padding-left: 30px;
+  padding-left: 40px;
   padding-top: 5px;
 }
 

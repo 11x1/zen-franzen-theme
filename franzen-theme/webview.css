@@ -2,3 +2,21 @@
 #tabbrowser-tabbox {
   --zen-border-radius: 3px !important;
 }
+
+#tabbrowser-tabpanels {
+  & [zen-split-active="true"] {
+    box-shadow: 0 0 0 1px #fff5 !important;
+  }
+  
+  & [zen-split="true"] > :first-of-type {
+    resize: horizontal !important;
+    overflow: hidden !important;
+  }
+  
+  & [zen-split="true"]:last-child {
+    width: auto !important;
+    & > :first-of-type {
+      resize: none !important;
+    }
+  }
+}

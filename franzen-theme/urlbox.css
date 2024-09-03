@@ -2,6 +2,11 @@
 /* GIGA scuffed.png */
 #urlbar #urlbar-input {
   filter: blur( 3px );
+  transition: filter 100ms ease-in-out;
+}
+
+#urlbar #urlbar-input:hover {
+  filter: blur( 0px );
 }
 
 #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused], [focused]) {

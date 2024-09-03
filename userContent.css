@@ -1,0 +1,99 @@
+@-moz-document url(  "about:newtab" ) {
+  @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+  
+  @keyframes angleanim {
+    from {
+      --angle: 0deg;
+    } 
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --neat {
+    syntax: "<url>";
+    inherits: false;
+    initial-value: 'https://picsum.photos/1920/1080';
+  }
+  
+  body {
+    animation: angleanim forwards linear infinite 4s;
+    background: linear-gradient(
+      var( --angle ),
+      #0a0a10,
+      #111124
+    ) !important;
+/*     background-image: --neat !important;
+    backdrop-filter: brightness( .4 ) blur( 6px );
+    background-size: cover !important; */
+  }
+  
+  .customize-menu {
+    transition: transform 50ms ease-in-out, visibility 100ms !important;  
+  }
+  
+  
+ .customize-menu[role="dialog"] {
+background: linear-gradient( 270deg, #1d1d2050, #222230ff ) !important;
+   background: #ffffff20 !important;
+   backdrop-filter: blur( 6px );
+   box-shadow: -4px 0px 10px 0 black !important;
+   
+   & .close-button-wrapper {
+     background: transparent !important;
+   }
+  }
+  
+  main > .non-collapsible-section {
+    display: none;
+  }
+  
+  main .top-sites-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80vw;
+  }
+  
+  main .top-sites-list li:nth-child( 1n + 13 ) {
+    display: none !important;
+  }
+  
+  .top-sites-list > .top-site-outer  {
+    transition: background 100ms ease-out 200ms;
+    
+    .tile {
+      background: #fff1 !important;
+      border-radius: 4px !important;;
+      
+      .icon-wrapper {
+        border-radius: 3px !important;
+      }
+    }
+    
+    & .title {
+      font-family: "ProggyCleanTT" !important;;
+      font-size: 16px !important;
+    }
+
+    &:hover {
+      background: #fff0 !important;
+      
+/*       scale: 1.1; */
+      
+      .title {
+        text-decoration: underline;
+      }
+    } 
+  }
+}
+
+@-moz-document url( "about:preferences" ) {
+  .navigation {
+    background: #f001 !important;
+  }
+}
