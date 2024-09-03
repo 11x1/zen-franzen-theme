@@ -1,0 +1,30 @@
+/* @region-start - statusbar (link bar on bottom left) */
+#statuspanel {
+  margin: 5px;
+  
+  & #statuspanel-label {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none !important;
+    color: #6060ff !important;
+    text-shadow: 1px 1px black !important;
+  }
+  
+  &::before {
+    content: 'url:';
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    height: max-content;
+    padding: 2px 5px;
+    
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    
+    background: #111;
+    color: #fff8;
+  }
+}
+/* @region-end */

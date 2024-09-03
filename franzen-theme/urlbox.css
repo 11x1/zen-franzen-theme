@@ -1,0 +1,14 @@
+/* @region-start - popout urlbox */
+/* GIGA scuffed.png */
+#urlbar #urlbar-input {
+  filter: blur( 3px );
+}
+
+#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused], [focused]) {
+  #urlbar-input {
+    font-size: 16px !important;
+    filter: none;
+  }
+}
+/* @region-end */
+

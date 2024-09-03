@@ -1,0 +1,175 @@
+/* @region-start - top bar (search, url, extensions etc) hidden */
+#zen-appcontent-navbar-container {
+  position: absolute;
+  
+  width: 100%;
+  
+  left: 0;
+  height: 20px;
+  
+  z-index: 999;
+ }
+
+#nav-bar {
+  top: -60px;
+  max-width: 60%;
+  margin: 0 auto;
+  
+  transition: top 200ms ease-out 200ms;
+
+  background: #13121aa0 !important;
+  backdrop-filter: blur( 3px );
+  
+  border-radius: 5px;
+  
+  padding-left: 10px !important;
+  margin-bottom: 20px !important;
+  
+  z-index: 999;
+  
+  height: 50px;
+}
+
+#urlbar-container {
+  --urlbar-container-height: 41;
+  padding: 0 !important;
+}
+
+#nav-bar-customization-target {
+  padding: 0 !important;
+}
+
+#zen-appcontent-navbar-container:hover #nav-bar,
+#zen-appcontent-navbar-container #nav-bar:has( [ open="true" ] ),
+#zen-appcontent-navbar-container #nav-bar:has( #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused], [focused]) ) {
+  top: 15px;
+  transition: top 200ms ease-out;
+}
+
+#zen-tabbox-wrapper {
+  padding-top: 10px !important;
+  padding-left: 7px !important;
+  padding-right: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+#urlbar {
+  border-radius: 0px !important;
+  padding: 0;
+  height: 100%;
+}
+
+#identity-icon-box,
+#star-button-box,
+#tracking-protection-icon-container,
+#nav-bar toolbarbutton stack {
+  border-radius: 3px !important; 
+}
+#tracking-protection-icon-container {
+  margin-top: 3px !important;
+}
+
+#back-button, #forward-button { display: none; }
+
+@-moz-document url-prefix("chrome:") {
+  /* Element | chrome://browser/content/browser.xhtml */
+  #nav-bar {
+    display: flex;
+  }
+
+  #nav-bar > * {
+    order: 2 !important;;
+  }
+
+/* Element | chrome://browser/content/browser.xhtml */
+  /* center the buttons */
+  toolbar#nav-bar > hbox.titlebar-buttonbox-container > hbox.titlebar-buttonbox{
+    display: flex;
+    flex-direction: row-reverse;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    padding: 0 .4rem;
+  }
+
+      /* make the buttons smaller */
+  .titlebar-buttonbox > toolbarbutton {
+    padding: 0 10px !important;
+    height: 50%;
+  }
+
+  /* remove the windows button images */
+  .titlebar-buttonbox > toolbarbutton > image {
+    display: none;
+  }
+
+  /* add pseudo elements for mac circles */
+  .titlebar-buttonbox > .titlebar-button::before {
+    content: "";
+    min-width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    }
+
+  /* red - close */
+  .titlebar-buttonbox > .titlebar-close::before {
+    background: #ec6a5d;
+    border-color: #ba2516;
+  }
+
+  /* ylw - minimize */
+  .titlebar-buttonbox > .titlebar-min::before {
+    background: #f4be4f;
+    border-color: #c0850c;
+  }
+
+  /* grn - maximize */
+  .titlebar-buttonbox > :is( .titlebar-max, .titlebar-restore )::before {
+    background: #27ca41;
+    border-color: #177726;
+  }
+
+  /* move the maximize (green) to the right */
+  .titlebar-buttonbox > :is( .titlebar-max, .titlebar-restore ) {
+    order: 3;
+  }
+
+  /* move the minimize (yellow) to the middle */
+  .titlebar-buttonbox > .titlebar-min {
+    order: 2;
+  }
+
+  /* add background color and roundness to the buttons */
+  hbox.titlebar-buttonbox > toolbarbutton {
+    border-radius: 5px;
+    transition: background-color 200ms ease-in-out 100ms;
+  }
+
+  .titlebar-button:hover {
+    cursor: pointer;
+  }
+
+  hbox.titlebar-buttonbox > toolbarbutton:hover {
+    background-color: #fff1 !important;
+    transition: background-color 200ms ease-in-out;
+  }
+}
+
+#urlbar {
+  --urlbar-height: 40.00px !important;
+  border: none !important;
+  background: transparent;
+  border-radius: 3px !important;
+  backdrop-filter: blur( 100px ) !important;
+}
+
+#urlbar-background {
+  background: #ffffff04 !important;  
+  border-radius: 0 !important;
+}
+
+
+/* @region-end */
